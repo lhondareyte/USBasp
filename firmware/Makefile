@@ -6,10 +6,11 @@
 
 # TARGET=atmega8    HFUSE=0xc9  LFUSE=0xef
 # TARGET=atmega48   HFUSE=0xdd  LFUSE=0xff
+# TARGET=atmega88   HFUSE=0xdd  LFUSE=0xff
 # TARGET=at90s2313
-TARGET=atmega8
-HFUSE=0xc9
-LFUSE=0xef
+TARGET=atmega88
+HFUSE=0xdd
+LFUSE=0xff
 
 
 # ISP=bsd      PORT=/dev/parport0
@@ -37,7 +38,8 @@ help:
 	@echo "       ISP=${ISP}"
 	@echo "       PORT=${PORT}"
 
-COMPILE = avr-gcc -Wall -O2 -Iusbdrv -I. -mmcu=$(TARGET) # -DDEBUG_LEVEL=2
+#COMPILE = avr-gcc -Wall -O2 -Iusbdrv -I. -mmcu=$(TARGET) # -DDEBUG_LEVEL=2
+COMPILE = avr-gcc -Wall -O2 -Iusbdrv -I. -mmcu=$(TARGET) -D__GREEN_PHOTONS__
 
 OBJECTS = usbdrv/usbdrv.o usbdrv/usbdrvasm.o usbdrv/oddebug.o isp.o clock.o tpi.o main.o
 
