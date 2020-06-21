@@ -306,10 +306,10 @@ int main(void) {
 	/* no pullups on USB and ISP pins */
 	PORTD = 0;
 	PORTB = 0;
-	/* all outputs except PD2 = INT0 */
 #if defined (__GREEN_PHOTONS__)
 	DDRD = 0x00;
 #else
+	/* all outputs except PD2 = INT0 */
 	DDRD = ~(1 << 2);
 #endif
 
