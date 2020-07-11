@@ -5,7 +5,7 @@ See [Thomas Fischl's website](https://www.fischl.de/usbasp/) and [Green Photons'
 
 
 ### Build
-Make sure, you have avg-gcc toolchain installed. To build the patched version, just type:
+Make sure you have avr-gcc toolchain installed. To build the patched version, just type:
 
 `make main.hex`
 
